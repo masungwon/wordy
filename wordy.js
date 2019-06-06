@@ -5,7 +5,9 @@ export class WordProblem {
 
     answer() {
         const [firstInt, secondInt] = this.extractNumbers();
-        return firstInt + secondInt;
+
+        const operator = this.question.includes("plus") ? "+" : "-"
+        return eval(`${firstInt} ${operator} ${secondInt}`);
     }
 
     extractNumbers() {

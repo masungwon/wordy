@@ -11,17 +11,17 @@ describe('Word Problem', () => {
     expect(new WordProblem(question).answer()).toEqual(55);
   });
 
-  xtest('add negative numbers', () => {
+  test('add negative numbers', () => {
     const question = 'What is -1 plus -10?';
     expect(new WordProblem(question).answer()).toEqual(-11);
   });
 
-  xtest('add more digits', () => {
+  test('add more digits', () => {
     const question = 'What is 123 plus 45678?';
     expect(new WordProblem(question).answer()).toEqual(45801);
   });
 
-  xtest('subtract', () => {
+  test('subtract', () => {
     const question = 'What is 4 minus -12?';
     expect(new WordProblem(question).answer()).toEqual(16);
   });

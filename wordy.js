@@ -1,13 +1,30 @@
+const wordsToOperatorMap = {
+    "minus": "-",
+    "plus": "+",
+    "multiplied by": "*",
+}
+
 const determineOperator = (question) => {
-    return question.includes("plus") ? "+" : "-";
+    const operatorAsWord = Object.keys(wordsToOperatorMap).find(word => {
+      return question.includes(word)
+    })
+
+    return wordsToOperatorMap[operatorAsWord]
 }
 
 const extractNumbers = (question) => {
     const questionLackingQuestionMark = question.replace('?', '');
     const words = questionLackingQuestionMark.split(' ');
-    const firstInt = words[words.length - 3];
-    const lastInt = words[words.length - 1];
-    return [firstInt, lastInt];
+
+    const numericStrings = words.filter(word => {
+      const isNumber = !isNaN(word)
+
+      if (isNumber) {
+          return true
+      }
+    })
+
+    return numericStrings
 }
 
 export class WordProblem {

@@ -26,7 +26,7 @@ describe('Word Problem', () => {
     expect(new WordProblem(question).answer()).toEqual(16);
   });
 
-  xtest('multiply', () => {
+  test('multiply', () => {
     const question = 'What is -3 multiplied by 25?';
     expect(new WordProblem(question).answer()).toEqual(-75);
   });

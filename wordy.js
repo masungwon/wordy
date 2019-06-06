@@ -1,7 +1,8 @@
 const wordsToOperatorMap = {
     "minus": "-",
     "plus": "+",
-    "multiplied by": "*",
+		"multiplied by": "*",
+		"divided by": '/'
 }
 
 const determineOperator = (question) => {
@@ -17,7 +18,7 @@ const extractNumericStrings = (question) => {
     const words = questionLackingQuestionMark.split(' ');
 
     const numericStrings = words.filter(word => {
-      const isNumber = !isNaN(word)
+        const isNumber = !isNaN(word)
         return isNumber;
     });
 

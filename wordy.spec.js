@@ -31,7 +31,7 @@ describe('Word Problem', () => {
     expect(new WordProblem(question).answer()).toEqual(-75);
   });
 
-  xtest('divide', () => {
+  test('divide', () => {
     const question = 'What is 33 divided by -3?';
     expect(new WordProblem(question).answer()).toEqual(-11);
   });

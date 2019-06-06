@@ -12,19 +12,16 @@ const determineOperator = (question) => {
     return wordsToOperatorMap[operatorAsWord]
 }
 
-const extractNumbers = (question) => {
+const extractNumericStrings = (question) => {
     const questionLackingQuestionMark = question.replace('?', '');
     const words = questionLackingQuestionMark.split(' ');
 
     const numericStrings = words.filter(word => {
       const isNumber = !isNaN(word)
+        return isNumber;
+    });
 
-      if (isNumber) {
-          return true
-      }
-    })
-
-    return numericStrings
+    return numericStrings;
 }
 
 export class WordProblem {
@@ -33,7 +30,7 @@ export class WordProblem {
     }
 
     answer() {
-        const [firstInt, secondInt] = extractNumbers(this.question);
+        const [firstInt, secondInt] = extractNumericStrings(this.question);
 
         const operator = determineOperator(this.question);
         return eval(`${firstInt} ${operator} ${secondInt}`);

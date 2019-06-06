@@ -5,11 +5,9 @@ const determineOperator = (question) => {
 const extractNumbers = (question) => {
     const questionLackingQuestionMark = question.replace('?', '');
     const words = questionLackingQuestionMark.split(' ');
-    const thirdFromLastWord = words[words.length - 3];
-    const lastWord = words[words.length - 1];
-    const firstInt = parseInt(thirdFromLastWord);
-    const secondInt = parseInt(lastWord);
-    return [firstInt, secondInt];
+    const firstInt = words[words.length - 3];
+    const lastInt = words[words.length - 1];
+    return [firstInt, lastInt];
 }
 
 export class WordProblem {
